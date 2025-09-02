@@ -54,6 +54,7 @@ rpm -qa | grep -E "^libnghttp2-devel-[0-9]"
 # 3. Apache 설치(컴파일)
 # ---------------------
 # configure - 설정 및 환경 점검 => Makefile 생성
+cd /home/webwas/education/httpd-2.4.64
 ./configure \
   --prefix=/software/apache \
   --enable-mods-shared=all \
@@ -72,10 +73,6 @@ make install
 cd /software/apache/bin
 ./httpd -V
 
-# httpd 파일 권한 변경(setuid, setgid : 실행될때 해당 uid, gid로 실행)
-cd /software/apache/bin
-sudo chown root:webwas httpd
-sudo chmod 6750 httpd
 
 # ---------------------
 # 4. Tomcat Connector(AJP Module) 설치
@@ -94,13 +91,16 @@ make
 make install
 
 # 설치된 모듈 확인
-ls -l /software/apache/modules
+ls -lart /software/apache/modules
+...
+# mod_jk.so 생성 확인
 
 # 필수 파일 복사 (참고)
 #cd tomcat-connectors-1.2.50-src/conf
 #cp httpd-jk.conf           ${APACHE_HOME}/conf/extra
 #cp uriworkermap.properties ${APACHE_HOME}/conf/extra
 #cp workers.properties      ${APACHE_HOME}/conf/extra
+
 
 # ---------------------
 # 5. 보안 취약점 조치(최소)
@@ -114,6 +114,14 @@ chmod 750 /software/apache/logs
 rm -rf /software/apache/manual
 rm -rf /software/apache/cgi-bin
 rm -rf /software/apache/conf      # native하게 사용할 경우 삭제 대상에서 제외
+
+# ---------------------
+# 6. (선택) setuid, setgid 설정
+# ---------------------
+# httpd 파일 권한 변경(setuid, setgid : 실행될때 해당 uid, gid로 실행)
+cd /software/apache/bin
+sudo chown root:webwas httpd
+sudo chmod 6750 httpd
 
 # ---------------------
 # 6. Apache Teplate 폴더 복사
