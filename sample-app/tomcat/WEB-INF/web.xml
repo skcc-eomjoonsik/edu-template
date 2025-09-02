@@ -1,0 +1,14 @@
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+    <!-- 기본적인 web.xml 설정들 -->
+    <display-name>sample-app</display-name>
+
+    <!-- 세션 클러스터링을 위한 설정 -->
+    <distributable />
+
+    <!-- 기타 필요한 설정들 -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+</web-app>

@@ -1,0 +1,12 @@
+#SERVER_CNT=0
+
+####################
+# template
+####################
+#alias  tcfg0='cd /software/tomcat/servers/template/conf;                    ls -l'
+#alias  tdep0='cd /software/tomcat/servers/template/conf/Catalina/localhost; ls -l'
+#alias  tshl0='cd /software/tomcat/servers/template/shl;                     ls -l'
+#alias  tlog0='cd /log_data/tomcat/template;                                 ls -lart | tail -30'
+#alias talog0='tail -30f /log_data/tomcat/template/localhost_access.`date +%Y-%m-%d`.log'
+#alias telog0='tail -30f /log_data/tomcat/template/localhost.`date +%Y-%m-%d`.log'
+#alias tclog0='tail -30f /log_data/tomcat/template/catalina.out'

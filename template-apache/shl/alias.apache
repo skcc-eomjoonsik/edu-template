@@ -1,0 +1,13 @@
+#SERVER_CNT=0
+
+####################
+# template
+####################
+#alias  acfg0='cd /software/apache/servers/template/conf; ls -l'
+#alias  ashl0='cd /software/apache/servers/template/shl;  ls -l'
+#alias  alog0='cd /log_data/apache/template;              ls -lart | tail -20'
+#alias aalog0='tail -30f /log_data/apache/template/access.log.`date +%Y%m%d`'
+#alias aelog0='tail -30f /log_data/apache/template/error.log.`date +%Y%m%d`'
+#alias  mlog0='tail -30f /log_data/apache/template/mod_jk.log.`date +%Y%m%d`'
+#alias salog0='tail -30f /log_data/apache/template/ssl_access.log.`date +%Y%m%d`'
+#alias selog0='tail -30f /log_data/apache/template/ssl_error.log.`date +%Y%m%d`'

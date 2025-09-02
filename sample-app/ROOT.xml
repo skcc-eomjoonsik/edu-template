@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Context docBase="/home/webwas/education/sample-app/tomcat" privileged="true" antiResourceLocking="false" reloadable="false">
+<!-- MySQL DataSource ( 1 DB node )-->
+    <Resource name="jdbc/root" auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="10"
+              maxIdle="10"
+              minIdle="10"
+              initialSize="10"
+              maxWait="3000"
+              username="webwas"
+              password="webwas!00"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              removeAbandoned="true"
+              removeAbandonedTimeout="600"
+              logAbandoned="true"
+              validationQuery="select 1"
+              validationInterval="60000"
+              validationQueryTimeout="3"
+              logValidationErrors="true"
+              timeBetweenEvictionRunsMillis="120000"
+              minEvictableIdleTimeMillis="-1"
+              testOnConnect="true"
+              testOnBorrow="true"
+              testWhileIdle="true"
+              url="jdbc:mysql://edu-webwas.cluster-c8xsln0zfwzy.ap-northeast-2.rds.amazonaws.com:3306/webwas?autoReconnect=true&amp;failOverReadOnly=true&amp;connectTimeout=1500&amp;socketTimeout=10000"/>
+<!-- MySQL DataSource ( 3 DB node )
+              url="jdbc:mysql:loadbalance://1.1.1.1:3306,1.1.1.2:3306,1.1.1.3:3306/SID?autoReconnect=true&amp;failOverReadOnly=true&amp;connectTimeout=1500&amp;socketTimeout=10000"/>
+              url="jdbc:mysql:sequential://1.1.1.1:3306,1.1.1.2:3306,1.1.1.3:3306/SID?autoReconnect=true&amp;failOverReadOnly=true&amp;connectTimeout=1500&amp;socketTimeout=10000"/>
+-->
+
+<!-- Oracle DataSource ( 1 DB node )
+    <Resource name="jdbc/JNDINAME" auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="30"
+              maxIdle="30"
+              minIdle="30"
+              initialSize="30"
+              maxWait="3000"
+              username="USERNAME"
+              password="PASSWORD"
+              driverClassName="oracle.jdbc.driver.OracleDriver"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              removeAbandoned="true"
+              removeAbandonedTimeout="600"
+              logAbandoned="true"
+              validationQuery="select 1 from dual"
+              validationInterval="60000"
+              validationQueryTimeout="3"
+              logValidationErrors="true"
+              timeBetweenEvictionRunsMillis="120000"
+              minEvictableIdleTimeMillis="-1"
+              testOnConnect="true"
+              testOnBorrow="true"
+              testWhileIdle="true"
+              url="jdbc:oracle:thin:@localhost:1521:SID" />
+-->
+<!-- Oracle DataSource ( 2 DB node )
+              url="jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=OFF)(FAILOVER=ON)(ADDRESS_LIST=
+                                     (ADDRESS=(PROTOCOL=TCP)(HOST=1.2.3.4)(PORT=1521))
+                                     (ADDRESS=(PROTOCOL=TCP)(HOST=4.3.2.1)(PORT=1521)))
+                                     (CONNECT_DATA=(SERVICE_NAME=SID)))" />
+-->
+
+</Context>
+
+
+
+<!-- ### Set JSESSIONID ###
+<Context docBase="/DOCROOT/PATH" privileged="true" antiResourceLocking="false" reloadable="false" sessionCookieName="JSESSIONID">
+-->
+
+<!-- ### Set workDir ###
+<Context docBase="/DOCROOT/PATH" privileged="true" antiResourceLocking="false" reloadable="false" workDir="jspwork/PATH">
+-->
