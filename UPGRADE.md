@@ -37,8 +37,11 @@ make install
 cd /software/apache/bin
 ./httpd -V
 
-# httpd 파일 권한 변경(setuid, setgid : 실행될때 해당 uid, gid로 실행)
+# 보안 취약점 대비 권한 변경
 cd /software/apache/bin
+chmod 700 /software/apache/bin/*
+chmod 600 /software/apache/bin/envvars*
+# httpd 파일 권한 변경(setuid, setgid : 실행될때 해당 uid, gid로 실행)
 sudo chown root:webwas httpd
 sudo chmod 6750 httpd
 
