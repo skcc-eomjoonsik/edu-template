@@ -121,9 +121,9 @@ chmod 700 /software/apache/bin/*
 chmod 600 /software/apache/bin/envvars*
 
 # 운영에 불필요한 디렉토리 삭제
-rm -rf /software/apache/manual    # Manual page
-rm -rf /software/apache/cgi-bin   # CGI(Common Gateway Interface) 스크립트 사용시 삭제 대상에서 제외
-rm -rf /software/apache/conf      # native하게 사용할 경우 삭제 대상에서 제외
+rm -rf /software/apache/{manual,man} # Manual page (manual : 웹소스, man : man httpd용도)
+rm -rf /software/apache/cgi-bin      # CGI(Common Gateway Interface) 스크립트 사용시 삭제 대상에서 제외
+rm -rf /software/apache/conf         # native하게 사용할 경우 삭제 대상에서 제외
 ```
 
 ### 7. (선택) setuid, setgid 설정
