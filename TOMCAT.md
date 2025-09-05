@@ -48,9 +48,9 @@ rm -rf /software/tomcat/webapps/*
 ```bash
 # 인프라 템플릿 구성 파일 복사
 cd /home/webwas/education
-cp -Rp tomcat-servers/servers /software/tomcat/servers
-cp -Rp tomcat-servers/shl     /software/tomcat/shl
-cp -Rp tomcat-servers/jdbc    /software/tomcat/jdbc
+cp -Rp template-tomcat/servers /software/tomcat/servers
+cp -Rp template-tomcat/shl     /software/tomcat/shl
+cp -Rp template-tomcat/jdbc    /software/tomcat/jdbc
 
 # [실습용] JDBC 드라이버 복사 (app 테스트용)
 cd /software/tomcat/jdbc
