@@ -114,7 +114,11 @@ ls -lart /software/apache/modules
 ```bash
 # 설치 경로 권한 수정
 chmod 750 /software/apache /software/apache/logs
-chmod 700 /software/apache/{bin,build,conf,error,icons,include,lib,modules}
+chmod 700 /software/apache/{bin,build,conf,error,htdocs,icons,include,lib,modules}
+
+# 실행 파일 권한 수정
+chmod 700 /software/apache/bin/*
+chmod 600 /software/apache/bin/envvars*
 
 # 운영에 불필요한 디렉토리 삭제
 rm -rf /software/apache/manual    # Manual page
