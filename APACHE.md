@@ -145,8 +145,8 @@ sudo chmod 6750 httpd
 
 ```bash
 cd /home/webwas/education
-cp -Rp apache-servers/servers /software/apache/servers
-cp -Rp apache-servers/shl     /software/apache/shl
+cp -Rp template-apache/servers /software/apache/servers
+cp -Rp template-apache/shl     /software/apache/shl
 ```
 
 ## 실습 2 - Apache 인스턴스 구성
