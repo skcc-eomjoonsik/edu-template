@@ -52,6 +52,10 @@ cp -Rp template-tomcat/servers /software/tomcat/servers
 cp -Rp template-tomcat/shl     /software/tomcat/shl
 cp -Rp template-tomcat/jdbc    /software/tomcat/jdbc
 
+chmod 700 /software/tomcat/servers
+chmod 700 /software/tomcat/shl
+chmod 750 /software/tomcat/jdbc
+
 # [실습용] JDBC 드라이버 복사 (app 테스트용)
 cd /software/tomcat/jdbc
 cp mysql-connector-j-8.0.33.jar ../lib/mysql-connector-j-8.0.33.jar
