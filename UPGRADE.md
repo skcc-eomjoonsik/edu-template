@@ -19,12 +19,12 @@ wget https://dlcdn.apache.org//apr/apr-1.7.6.tar.gz
 wget https://dlcdn.apache.org//apr/apr-util-1.6.3.tar.gz
 wget https://dlcdn.apache.org//apr/apr-iconv-1.2.2.tar.gz
 
-# apr package 압축해제 및 폴더명 변경
+# APR package 압축해제 및 폴더명 변경
 tar xvf apr-1.7.6.tar.gz;       mv apr-1.7.6       apr
 tar xvf apr-util-1.6.3.tar.gz;  mv apr-util-1.6.3  apr-util
 tar xvf apr-iconv-1.2.2.tar.gz; mv apr-iconv-1.2.2 apr-iconv
 
-# 이전 설치 옵션(configure) 파일 및 srclib 폴더 복사
+# 이전 설치 옵션(configure) 파일 복사
 cp /software/apache/build/config.nice /home/webwas/education/httpd-2.4.65/config.nice
 
 # 신규 버전 폴더 이동 후 업데이트(신규 버전 빌드)
